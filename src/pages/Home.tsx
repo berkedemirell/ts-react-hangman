@@ -46,6 +46,13 @@ const Home = () => {
         },
         [guessedLetter, isLoser, isWinner]
       );
+
+      const getANewWord = () => {
+
+        setGuessedLetter([])
+        setWord(getWord());
+      }
+
     
       useEffect(() => {
         const handler = (e: KeyboardEvent) => {
@@ -81,8 +88,8 @@ const Home = () => {
     <div className="w-full flex flex-col gap-1 ml-auto mr-auto items-center font-mono bg-red-200 p-2">
         <h4 className="text-3xl mt-4 ssm:text-2xl text-mono uppercase">Category: {cat}</h4>
         <div className="text-3xl text-center mt-2 font-mono ssm:text-2xl">
-          {isWinner && "Winner! - Press enter to get a new word."}
-          {isLoser && "You lost. Try Again ❤"}
+          {isWinner && <button onClick={getANewWord}>"Winner! - Press enter to get a new word."</button>}
+          {isLoser && <button onClick={getANewWord}>"You lost. Try Again ❤"</button>}
         </div>
         <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
         <HangmanWord
