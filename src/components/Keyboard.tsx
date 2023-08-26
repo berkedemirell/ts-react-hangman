@@ -41,13 +41,13 @@ export const Keyboard = ({
   disabled = false,
 }: KeyboardProps) => {
   return (
-    <div className="grid grid-cols-12 gap-2 mt-8 mb-24">
+    <div className="grid grid-cols-12 md:grid-cols-8 gap-2 mt-8 mb-24">
       {KEYS.map((key) => {
         const isActive = activeLetter.includes(key);
         const isInactive = inactiveLetter.includes(key);
         return (
           <button
-            className={`border-solid border-4 uppercase border-slate-700 hover:bg-slate-700 w-12 h-12 rounded-md ${
+            className={`border-solid border-4 uppercase border-slate-700 hover:bg-slate-700 md:w-10 md:h-10 ssm:w-8 ssm:h-8 w-12 h-12 rounded-md ${
               isActive ? "bg-blue-300 hover:bg-blue-300" : ""
             } ${isInactive ? "opacity-40 hover:bg-slate-100" : ""}`}
             key={key}

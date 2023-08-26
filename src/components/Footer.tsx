@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="font-mono flex flex-row items-center justify-center gap-96 bg-gradient-to-r from-slate-600 to-slate-800 h-fit">
+    <div className="font-mono flex flex-row items-center justify-center gap-96 ssm:gap-40 bg-gradient-to-r from-slate-600 to-slate-800 h-fit">
       <div className="">
         <p className="p-6 text-xl">
           <Link
